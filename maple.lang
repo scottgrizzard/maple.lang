@@ -7,9 +7,112 @@
  Copyright (C) 2017 Scott Grizzard <sgrizzar@mail.usf.edu>
  -->
  
- <language id="maple" _name="Maple" version="2017" _section="Scientific">
+ <language id="maple" _name="Maple" version="2.0" _section="Scientific">
     <metadata>
+        <property name="mimetypes">text/x-maple</property>
         <property name="globs">*.mpl;*.maple</property>
         <property name="line-comment-start">#</property>
+        <property name="block-comment-start">(*</property>
+        <property name="block-comment-end">*)</property>
     </metadata>
+    
+    <styles>
+        <style id="comment"				_name="Comment"				map-to="def:comment"/>
+        <style id="string"				_name="String"				map-to="def:string"/>
+        <style id="keyword"				_name="Keyword"				map-to="def:keyword"/>
+        <style id="null-value"			_name="Null Value"			map-to="def:special-constant"/>
+        <style id="boolean"				_name="Boolean value"		map-to="def:boolean"/>
+        <style id="number"				_name="Number"				map-to="def:decimal"/>
+        <style id="function"			_name="Function"			map-to="def:function"/>
+        <style id="special-constant"	_name="Special Constant"	map-to="def:special-constant"/>
+        <style id="assignment-operator" _name="Assignment Operator"	map-to="def:operator"/>
+        <style id="builtin"				_name="Builtin"				map-to="def:builtin"/>
+		<style id="type"				_name="Data Type"			map-to="def:type"/>
+		<style id="reserved-classes"	_name="Reserved Class"		map-to="def:type"/>
+		<style id="included-file"		_name="Included File"		map-to="def:string"/>
+		<style id="preprocessor"		_name="Preprocessor"		map-to="def:preprocessor"/>
+    </styles>
+    
+    <definitions>
+        <context id="block-comment" style-ref="comment" class="comment"
+                 class-disabled="no-spell-check">
+          <start>\(\*</start>
+          <end>\*\)</end>
+          <include>
+            <context ref="def:in-comment"/>
+          </include>
+        </context>
+
+        <context id="line-comment" style-ref="comment" end-at-line-end="true"
+                 class="comment">
+          <start>#</start>
+          <include>
+            <context ref="def:in-comment"/>
+          </include>
+        </context>
+
+        <context id="special-constants" style-ref="special-constant">
+          <keyword>Pi</keyword>
+          <keyword>I</keyword>
+          <keyword>Catalan</keyword>
+          <keyword>gamma</keyword>
+          <keyword>infinity</keyword>
+        </context>
+
+        <context id="boolean" style-ref="boolean">
+          <keyword>FALSE</keyword>
+          <keyword>TRUE</keyword>
+          <keyword>false</keyword>
+          <keyword>true</keyword>
+          <keyword>FAIL</keyword>
+        </context>
+        
+		<context id="assignment-operator" style-ref="assignment-operator">
+		  <match>:=</match>
+		</context>
+
+		<context id="reserved-classes" style-ref="reserved-classes">
+			<keyword>Matrix</keyword>
+			<keyword>Vector</keyword>
+			<keyword>Array</keyword>
+			<keyword>Matrix</keyword>
+			<keyword>Vector\[column\]</keyword>
+			<keyword>Vector\[row\]</keyword>
+		</context>
+		
+		<context id="type" style-ref="type">
+			<keyword>string</keyword>
+			<keyword>expseq</keyword>
+			<keyword>float</keyword>
+			<keyword>fraction</keyword>
+			<keyword>function</keyword>
+			<keyword>integer</keyword>
+			<keyword>list</keyword>
+			<keyword>symbol</keyword>
+		</context>
+		
+        <context id="include" style-ref="preprocessor">
+          <match>^(\s)*read(\s)*\(\".*\"\)</match>
+          <include>
+            <context id="included-file"
+                     sub-pattern="1"
+                     style-ref="included-file"/>
+          </include>
+        </context>
+        
+        <context id="maple">
+          <include>
+			<context ref="def:shebang"/> <!-- include the hashbang definition for maple shell scripts. -->
+			<context ref="block-comment" />
+            <context ref="special-constants"/>
+            <context ref="boolean"/>
+            <context ref="line-comment"/>
+            <context ref="assignment-operator"/>
+            <context ref="reserved-classes" />
+            <context ref="type"/>
+            <context ref="include"/>
+          </include>
+        </context>
+        
+    </definitions>
  </language>
