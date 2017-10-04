@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ This file defines the Maple language for GtkSourceView
+
+ Author: Scott Grizzard <sgrizzar@mail.usf.edu>
+ Copyright (C) 2017 Scott Grizzard <sgrizzar@mail.usf.edu>
+ -->
+ 
+ <language id="maple" _name="Maple" version="2017" _section="Scientific">
+    <metadata>
+        <property name="globs">*.mpl;*.maple</property>
+        <property name="line-comment-start">#</property>
+    </metadata>
+ </language>
