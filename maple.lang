@@ -42,6 +42,8 @@
 		<style id="operator"			_name="Operators"			map-to="def:operator"/>
 		<style id="error"				_name="Error"				map-to="def:error"/>
 		<style id="boolean-evaluations" _name="Boolean Evaluations" map-to="def:keyword"/>
+		<style id="delayed-statement"	_name="Delayed Statements"	map-to="def:doc-comment-element"/>
+		<style id="backtick-name"		_name="Backtick Name"		map-to="def:identifier"/>
     </styles>
     
     <definitions>
@@ -84,8 +86,697 @@
 			<keyword>error</keyword>
 			<keyword>done</keyword>
 			<keyword>use</keyword>
-			<keyword>break</keyword>
 			<keyword>return</keyword>
+			<keyword>use</keyword>
+			<keyword>ASSERT</keyword>
+			<keyword>_nrest</keyword>
+			<keyword>_params</keyword>
+			<keyword>_passed</keyword>
+			<keyword>_rest</keyword>
+			<keyword>args</keyword>
+			<keyword>break</keyword>
+			<keyword>curry</keyword>
+			<keyword>empty</keyword>
+			<keyword>error</keyword>
+			<keyword>export</keyword>
+			<keyword>finally</keyword>
+			<keyword>inline</keyword>
+			<keyword>module</keyword>
+			<keyword>named</keyword>
+			<keyword>nargs</keyword>
+			<keyword>option</keyword>
+			<keyword>package</keyword>
+			<keyword>parse</keyword>
+			<keyword>quit</keyword>
+			<keyword>read</keyword>
+			<keyword>restart</keyword>
+			<keyword>return</keyword>
+			<keyword>rtable</keyword>
+			<keyword>save</keyword>
+			<keyword>stop</keyword>
+			<keyword>subgrel</keyword>
+			<keyword>uses</keyword>
+			<keyword>ModuleApply</keyword>
+			<keyword>ModuleLoad</keyword>
+			<keyword>ModulePrint</keyword>
+			<keyword>SimpleQueue</keyword>
+			<keyword>SimpleStack</keyword>
+			<keyword>_noptions</keyword>
+			<keyword>_nparams</keyword>
+			<keyword>_npassed</keyword>
+			<keyword>_nresults</keyword>
+			<keyword>_options</keyword>
+			<keyword>assignment</keyword>
+			<keyword>debugger</keyword>
+			<keyword>debugopts</keyword>
+			<keyword>description</keyword>
+			<keyword>excallgraph</keyword>
+			<keyword>exprofile</keyword>
+			<keyword>function</keyword>
+			<keyword>lexorder</keyword>
+			<keyword>nprofile</keyword>
+			<keyword>overload</keyword>
+			<keyword>parameters</keyword>
+			<keyword>printlevel</keyword>
+			<keyword>procedure</keyword>
+			<keyword>procname</keyword>
+			<keyword>remember</keyword>
+			<keyword>separator</keyword>
+			<keyword>showprofile</keyword>
+			<keyword>thismodule</keyword>
+			<keyword>NumericEvent</keyword>
+			<keyword>ProcessOptions</keyword>
+			<keyword>SampleRTable</keyword>
+			<keyword>option_hfloat</keyword>
+			<keyword>ModuleContextMenu</keyword>
+			<keyword>NumericEventHandler</keyword>
+			<keyword>NumericException</keyword>
+			<keyword>parameter_modifiers</keyword>
+		</context>
+		
+		<context id="function" style-ref="function">
+			<keyword>about</keyword>
+			<keyword>abs</keyword>
+			<keyword>add</keyword>
+			<keyword>additionally</keyword>
+			<keyword>addproperty</keyword>
+			<keyword>addressof</keyword>
+			<keyword>AFactor</keyword>
+			<keyword>AFactors</keyword>
+			<keyword>AIrreduc</keyword>
+			<keyword>AiryAi</keyword>
+			<keyword>AiryAiZeros</keyword>
+			<keyword>AiryBi</keyword>
+			<keyword>AiryBiZeros</keyword>
+			<keyword>andmap</keyword>
+			<keyword>AngerJ</keyword>
+			<keyword>arccos</keyword>
+			<keyword>arccosh</keyword>
+			<keyword>arccot</keyword>
+			<keyword>arccoth</keyword>
+			<keyword>arccsc</keyword>
+			<keyword>arccsch</keyword>
+			<keyword>arcsec</keyword>
+			<keyword>arcsech</keyword>
+			<keyword>arcsin</keyword>
+			<keyword>arcsinh</keyword>
+			<keyword>arctan</keyword>
+			<keyword>arctanh</keyword>
+			<keyword>ArrayDims</keyword>
+			<keyword>ArrayNumDims</keyword>
+			<keyword>assemble</keyword>
+			<keyword>assign</keyword>
+			<keyword>assume</keyword>
+			<keyword>assuming</keyword>
+			<keyword>attributes</keyword>
+			<keyword>BellB</keyword>
+			<keyword>Berlekamp</keyword>
+			<keyword>bernoulli</keyword>
+			<keyword>bernstein</keyword>
+			<keyword>BernsteinBasis</keyword>
+			<keyword>BesselI</keyword>
+			<keyword>BesselJ</keyword>
+			<keyword>BesselJZeros</keyword>
+			<keyword>BesselK</keyword>
+			<keyword>BesselY</keyword>
+			<keyword>BesselYZeros</keyword>
+			<keyword>Beta</keyword>
+			<keyword>binomial</keyword>
+			<keyword>Cache</keyword>
+			<keyword>cat</keyword>
+			<keyword>ceil</keyword>
+			<keyword>changecoords</keyword>
+			<keyword>Charpoly</keyword>
+			<keyword>ChebyshevT</keyword>
+			<keyword>ChebyshevU</keyword>
+			<keyword>Chi</keyword>
+			<keyword>Ci</keyword>
+			<keyword>close</keyword>
+			<keyword>coeff</keyword>
+			<keyword>coeffs</keyword>
+			<keyword>collect</keyword>
+			<keyword>colondash</keyword>
+			<keyword>combine</keyword>
+			<keyword>comparray</keyword>
+			<keyword>compiletable</keyword>
+			<keyword>CompleteBellB</keyword>
+			<keyword>Complex</keyword>
+			<keyword>ComplexRange</keyword>
+			<keyword>compoly</keyword>
+			<keyword>CompSeq</keyword>
+			<keyword>Content</keyword>
+			<keyword>content</keyword>
+			<keyword>convergs</keyword>
+			<keyword>copy</keyword>
+			<keyword>CopySign</keyword>
+			<keyword>cos</keyword>
+			<keyword>cosh</keyword>
+			<keyword>cot</keyword>
+			<keyword>coth</keyword>
+			<keyword>coulditbe</keyword>
+			<keyword>CoulombF</keyword>
+			<keyword>csc</keyword>
+			<keyword>csch</keyword>
+			<keyword>currentdir</keyword>
+			<keyword>CylinderD</keyword>
+			<keyword>CylinderU</keyword>
+			<keyword>CylinderV</keyword>
+			<keyword>D</keyword>
+			<keyword>Default0</keyword>
+			<keyword>DefaultOverflow</keyword>
+			<keyword>DefaultUnderflow</keyword>
+			<keyword>define</keyword>
+			<keyword>define_external</keyword>
+			<keyword>definemore</keyword>
+			<keyword>degree</keyword>
+			<keyword>denom</keyword>
+			<keyword>depends</keyword>
+			<keyword>DESol</keyword>
+			<keyword>Det</keyword>
+			<keyword>diff</keyword>
+			<keyword>Diff</keyword>
+			<keyword>Digits</keyword>
+			<keyword>dilog</keyword>
+			<keyword>dinterp</keyword>
+			<keyword>Dirac</keyword>
+			<keyword>disassemble</keyword>
+			<keyword>discont</keyword>
+			<keyword>discrim</keyword>
+			<keyword>dismantle</keyword>
+			<keyword>DistDeg</keyword>
+			<keyword>divide</keyword>
+			<keyword>Divide</keyword>
+			<keyword>doublefactorial</keyword>
+			<keyword>dsolve</keyword>
+			<keyword>Ei</keyword>
+			<keyword>eliminate</keyword>
+			<keyword>ellipsoid</keyword>
+			<keyword>EllipticCE</keyword>
+			<keyword>EllipticCK</keyword>
+			<keyword>EllipticCPi</keyword>
+			<keyword>EllipticE</keyword>
+			<keyword>EllipticF</keyword>
+			<keyword>EllipticK</keyword>
+			<keyword>EllipticPi</keyword>
+			<keyword>entries</keyword>
+			<keyword>Equate</keyword>
+			<keyword>erf</keyword>
+			<keyword>erfc</keyword>
+			<keyword>erfi</keyword>
+			<keyword>euler</keyword>
+			<keyword>eulermac</keyword>
+			<keyword>Eval</keyword>
+			<keyword>eval</keyword>
+			<keyword>evala</keyword>
+			<keyword>evalapply</keyword>
+			<keyword>evalb</keyword>
+			<keyword>evalc</keyword>
+			<keyword>evalf</keyword>
+			<keyword>evalhf</keyword>
+			<keyword>evalr</keyword>
+			<keyword>evalrC</keyword>
+			<keyword>exists</keyword>
+			<keyword>exp</keyword>
+			<keyword>Expand</keyword>
+			<keyword>expand</keyword>
+			<keyword>expandoff</keyword>
+			<keyword>expandon</keyword>
+			<keyword>ExportMatrix</keyword>
+			<keyword>exports</keyword>
+			<keyword>ExportVector</keyword>
+			<keyword>extrema</keyword>
+			<keyword>factor</keyword>
+			<keyword>Factor</keyword>
+			<keyword>factorial</keyword>
+			<keyword>Factors</keyword>
+			<keyword>factors</keyword>
+			<keyword>fclose</keyword>
+			<keyword>fdiff</keyword>
+			<keyword>feof</keyword>
+			<keyword>fflush</keyword>
+			<keyword>FFT</keyword>
+			<keyword>fixdiv</keyword>
+			<keyword>float</keyword>
+			<keyword>floor</keyword>
+			<keyword>fnormal</keyword>
+			<keyword>fold</keyword>
+			<keyword>fopen</keyword>
+			<keyword>forall</keyword>
+			<keyword>fprintf</keyword>
+			<keyword>frac</keyword>
+			<keyword>fracdiff</keyword>
+			<keyword>Fraction</keyword>
+			<keyword>freeze</keyword>
+			<keyword>frem</keyword>
+			<keyword>fremove</keyword>
+			<keyword>FresnelC</keyword>
+			<keyword>Fresnelf</keyword>
+			<keyword>Fresnelg</keyword>
+			<keyword>FresnelS</keyword>
+			<keyword>Frobenius</keyword>
+			<keyword>FromInert</keyword>
+			<keyword>fscanf</keyword>
+			<keyword>fsolve</keyword>
+			<keyword>FunctionAdvisor</keyword>
+			<keyword>galois</keyword>
+			<keyword>GAMMA</keyword>
+			<keyword>Gausselim</keyword>
+			<keyword>Gaussjord</keyword>
+			<keyword>gcd</keyword>
+			<keyword>Gcd</keyword>
+			<keyword>gcdex</keyword>
+			<keyword>Gcdex</keyword>
+			<keyword>GegenbauerC</keyword>
+			<keyword>genpoly</keyword>
+			<keyword>getassumptions</keyword>
+			<keyword>getenv</keyword>
+			<keyword>GF</keyword>
+			<keyword>grelgroup</keyword>
+			<keyword>HankelH1</keyword>
+			<keyword>HankelH2</keyword>
+			<keyword>has</keyword>
+			<keyword>hasassumptions</keyword>
+			<keyword>hasfun</keyword>
+			<keyword>hasoption</keyword>
+			<keyword>hastype</keyword>
+			<keyword>Heaviside</keyword>
+			<keyword>Hermite</keyword>
+			<keyword>HermiteH</keyword>
+			<keyword>hermitian</keyword>
+			<keyword>Hessenberg</keyword>
+			<keyword>HeunB</keyword>
+			<keyword>HeunBPrime</keyword>
+			<keyword>HeunC</keyword>
+			<keyword>HeunCPrime</keyword>
+			<keyword>HeunD</keyword>
+			<keyword>HeunDPrime</keyword>
+			<keyword>HeunG</keyword>
+			<keyword>HeunGPrime</keyword>
+			<keyword>HeunT</keyword>
+			<keyword>HeunTPrime</keyword>
+			<keyword>hfarray</keyword>
+			<keyword>HFloat</keyword>
+			<keyword>history</keyword>
+			<keyword>hypergeom</keyword>
+			<keyword>icontent</keyword>
+			<keyword>identify</keyword>
+			<keyword>identity</keyword>
+			<keyword>ifactor</keyword>
+			<keyword>ifactors</keyword>
+			<keyword>iFFT</keyword>
+			<keyword>igcd</keyword>
+			<keyword>igcdex</keyword>
+			<keyword>ilcm</keyword>
+			<keyword>ilog10</keyword>
+			<keyword>ilog2</keyword>
+			<keyword>ilog[b]</keyword>
+			<keyword>Im</keyword>
+			<keyword>implicitdiff</keyword>
+			<keyword>ImportMatrix</keyword>
+			<keyword>ImportVector</keyword>
+			<keyword>IncompleteBellB</keyword>
+			<keyword>Indep</keyword>
+			<keyword>indets</keyword>
+			<keyword>indices</keyword>
+			<keyword>initialcondition</keyword>
+			<keyword>initialconstants</keyword>
+			<keyword>initialfunctions</keyword>
+			<keyword>insertpattern</keyword>
+			<keyword>Int</keyword>
+			<keyword>int</keyword>
+			<keyword>intat</keyword>
+			<keyword>Intat</keyword>
+			<keyword>Interp</keyword>
+			<keyword>interp</keyword>
+			<keyword>intsolve</keyword>
+			<keyword>Inverse</keyword>
+			<keyword>InverseJacobiAM</keyword>
+			<keyword>InverseJacobiCD</keyword>
+			<keyword>InverseJacobiCN</keyword>
+			<keyword>InverseJacobiCS</keyword>
+			<keyword>InverseJacobiDC</keyword>
+			<keyword>InverseJacobiDN</keyword>
+			<keyword>InverseJacobiDS</keyword>
+			<keyword>InverseJacobiNC</keyword>
+			<keyword>InverseJacobiND</keyword>
+			<keyword>InverseJacobiNS</keyword>
+			<keyword>InverseJacobiSC</keyword>
+			<keyword>InverseJacobiSD</keyword>
+			<keyword>InverseJacobiSN</keyword>
+			<keyword>invfunc</keyword>
+			<keyword>invztrans</keyword>
+			<keyword>iquo</keyword>
+			<keyword>iratrecon</keyword>
+			<keyword>irem</keyword>
+			<keyword>iroot</keyword>
+			<keyword>irreduc</keyword>
+			<keyword>is</keyword>
+			<keyword>iscont</keyword>
+			<keyword>isdifferentiable</keyword>
+			<keyword>IsMatrixShape</keyword>
+			<keyword>isolate</keyword>
+			<keyword>isolve</keyword>
+			<keyword>ispoly</keyword>
+			<keyword>isprime</keyword>
+			<keyword>isqrfree</keyword>
+			<keyword>isqrt</keyword>
+			<keyword>Issimilar</keyword>
+			<keyword>issqr</keyword>
+			<keyword>IsVectorShape</keyword>
+			<keyword>ithprime</keyword>
+			<keyword>JacobiAM</keyword>
+			<keyword>JacobiCD</keyword>
+			<keyword>JacobiCN</keyword>
+			<keyword>JacobiCS</keyword>
+			<keyword>JacobiDC</keyword>
+			<keyword>JacobiDN</keyword>
+			<keyword>JacobiDS</keyword>
+			<keyword>JacobiNC</keyword>
+			<keyword>JacobiND</keyword>
+			<keyword>JacobiNS</keyword>
+			<keyword>JacobiP</keyword>
+			<keyword>JacobiSC</keyword>
+			<keyword>JacobiSD</keyword>
+			<keyword>JacobiSN</keyword>
+			<keyword>JacobiTheta1</keyword>
+			<keyword>JacobiTheta2</keyword>
+			<keyword>JacobiTheta3</keyword>
+			<keyword>JacobiTheta4</keyword>
+			<keyword>KelvinBei</keyword>
+			<keyword>KelvinBer</keyword>
+			<keyword>KelvinHei</keyword>
+			<keyword>KelvinHer</keyword>
+			<keyword>KelvinKei</keyword>
+			<keyword>KelvinKer</keyword>
+			<keyword>KummerM</keyword>
+			<keyword>KummerU</keyword>
+			<keyword>LagrangeBasis</keyword>
+			<keyword>LaguerreL</keyword>
+			<keyword>Lcm</keyword>
+			<keyword>lcm</keyword>
+			<keyword>lcoeff</keyword>
+			<keyword>ldegree</keyword>
+			<keyword>leadterm</keyword>
+			<keyword>LegendreP</keyword>
+			<keyword>LegendreQ</keyword>
+			<keyword>length</keyword>
+			<keyword>LerchPhi</keyword>
+			<keyword>lhs</keyword>
+			<keyword>limit</keyword>
+			<keyword>Limit</keyword>
+			<keyword>Linsolve</keyword>
+			<keyword>ln</keyword>
+			<keyword>lnGAMMA</keyword>
+			<keyword>log</keyword>
+			<keyword>log10</keyword>
+			<keyword>LommelS1</keyword>
+			<keyword>LommelS2</keyword>
+			<keyword>lprint</keyword>
+			<keyword>map</keyword>
+			<keyword>map2</keyword>
+			<keyword>Maple_floats</keyword>
+			<keyword>maptype</keyword>
+			<keyword>match</keyword>
+			<keyword>MathieuA</keyword>
+			<keyword>MathieuB</keyword>
+			<keyword>MathieuC</keyword>
+			<keyword>MathieuCE</keyword>
+			<keyword>MathieuCEPrime</keyword>
+			<keyword>MathieuCPrime</keyword>
+			<keyword>MathieuExponent</keyword>
+			<keyword>MathieuFloquet</keyword>
+			<keyword>MathieuFloquetPrime</keyword>
+			<keyword>MathieuS</keyword>
+			<keyword>MathieuSE</keyword>
+			<keyword>MathieuSEPrime</keyword>
+			<keyword>MathieuSPrime</keyword>
+			<keyword>MatrixOptions</keyword>
+			<keyword>max</keyword>
+			<keyword>maximize</keyword>
+			<keyword>maxnorm</keyword>
+			<keyword>MeijerG</keyword>
+			<keyword>member</keyword>
+			<keyword>membertype</keyword>
+			<keyword>min</keyword>
+			<keyword>minimize</keyword>
+			<keyword>mod</keyword>
+			<keyword>ModifiedMeijerG</keyword>
+			<keyword>modp</keyword>
+			<keyword>modp1</keyword>
+			<keyword>modp2</keyword>
+			<keyword>modpol</keyword>
+			<keyword>mods</keyword>
+			<keyword>msolve</keyword>
+			<keyword>mul</keyword>
+			<keyword>NewtonBasis</keyword>
+			<keyword>NextAfter</keyword>
+			<keyword>Nextpoly</keyword>
+			<keyword>Nextprime</keyword>
+			<keyword>nextprime</keyword>
+			<keyword>nops</keyword>
+			<keyword>norm</keyword>
+			<keyword>Normal</keyword>
+			<keyword>normal</keyword>
+			<keyword>nprintf</keyword>
+			<keyword>Nullspace</keyword>
+			<keyword>numboccur</keyword>
+			<keyword>numelems</keyword>
+			<keyword>numer</keyword>
+			<keyword>NumericClass</keyword>
+			<keyword>odetest</keyword>
+			<keyword>op</keyword>
+			<keyword>order</keyword>
+			<keyword>OrderBasis</keyword>
+			<keyword>OrderedNE</keyword>
+			<keyword>ormap</keyword>
+			<keyword>packages</keyword>
+			<keyword>patmatch</keyword>
+			<keyword>permgroup</keyword>
+			<keyword>plot</keyword>
+			<keyword>plot3d</keyword>
+			<keyword>plotsetup</keyword>
+			<keyword>pochhammer</keyword>
+			<keyword>PochhammerBasis</keyword>
+			<keyword>pointto</keyword>
+			<keyword>poisson</keyword>
+			<keyword>polylog</keyword>
+			<keyword>Power</keyword>
+			<keyword>powmod</keyword>
+			<keyword>Powmod</keyword>
+			<keyword>prem</keyword>
+			<keyword>Prem</keyword>
+			<keyword>Prevpoly</keyword>
+			<keyword>Prevprime</keyword>
+			<keyword>prevprime</keyword>
+			<keyword>Primfield</keyword>
+			<keyword>Primitive</keyword>
+			<keyword>Primpart</keyword>
+			<keyword>primpart</keyword>
+			<keyword>print</keyword>
+			<keyword>printf</keyword>
+			<keyword>product</keyword>
+			<keyword>Product</keyword>
+			<keyword>proot</keyword>
+			<keyword>property</keyword>
+			<keyword>protect</keyword>
+			<keyword>Psi</keyword>
+			<keyword>psqrt</keyword>
+			<keyword>Quo</keyword>
+			<keyword>quo</keyword>
+			<keyword>radfield</keyword>
+			<keyword>radnormal</keyword>
+			<keyword>rand</keyword>
+			<keyword>randomize</keyword>
+			<keyword>randpoly</keyword>
+			<keyword>Randpoly</keyword>
+			<keyword>Randprime</keyword>
+			<keyword>rationalize</keyword>
+			<keyword>Ratrecon</keyword>
+			<keyword>ratrecon</keyword>
+			<keyword>Re</keyword>
+			<keyword>readbytes</keyword>
+			<keyword>readline</keyword>
+			<keyword>readstat</keyword>
+			<keyword>RealRange</keyword>
+			<keyword>realroot</keyword>
+			<keyword>redefine</keyword>
+			<keyword>Reduce</keyword>
+			<keyword>Rem</keyword>
+			<keyword>rem</keyword>
+			<keyword>remove</keyword>
+			<keyword>residue</keyword>
+			<keyword>RESol</keyword>
+			<keyword>resultant</keyword>
+			<keyword>Resultant</keyword>
+			<keyword>rhs</keyword>
+			<keyword>Rif</keyword>
+			<keyword>root</keyword>
+			<keyword>rootbound</keyword>
+			<keyword>Roots</keyword>
+			<keyword>roots</keyword>
+			<keyword>round</keyword>
+			<keyword>Rounding</keyword>
+			<keyword>rsolve</keyword>
+			<keyword>rtable_dims</keyword>
+			<keyword>rtable_elems</keyword>
+			<keyword>rtable_num_dims</keyword>
+			<keyword>rtable_num_elems</keyword>
+			<keyword>scalar</keyword>
+			<keyword>Scale10</keyword>
+			<keyword>Scale2</keyword>
+			<keyword>scanf</keyword>
+			<keyword>SDMPolynom</keyword>
+			<keyword>searchtext</keyword>
+			<keyword>SearchText</keyword>
+			<keyword>sec</keyword>
+			<keyword>sech</keyword>
+			<keyword>select</keyword>
+			<keyword>selectfun</keyword>
+			<keyword>selectremove</keyword>
+			<keyword>seq</keyword>
+			<keyword>series</keyword>
+			<keyword>setattribute</keyword>
+			<keyword>SFloatExponent</keyword>
+			<keyword>SFloatMantissa</keyword>
+			<keyword>shake</keyword>
+			<keyword>Shi</keyword>
+			<keyword>Si</keyword>
+			<keyword>sign</keyword>
+			<keyword>signum</keyword>
+			<keyword>Simplify</keyword>
+			<keyword>simplify</keyword>
+			<keyword>sin</keyword>
+			<keyword>sinh</keyword>
+			<keyword>sinterp</keyword>
+			<keyword>smartplot</keyword>
+			<keyword>smartplot3d</keyword>
+			<keyword>Smith</keyword>
+			<keyword>solve</keyword>
+			<keyword>sort</keyword>
+			<keyword>sparse</keyword>
+			<keyword>SphericalY</keyword>
+			<keyword>sprem</keyword>
+			<keyword>SPrem</keyword>
+			<keyword>sprintf</keyword>
+			<keyword>Sqrfree</keyword>
+			<keyword>sqrfree</keyword>
+			<keyword>sqrt</keyword>
+			<keyword>sscanf</keyword>
+			<keyword>Ssi</keyword>
+			<keyword>Stirling1</keyword>
+			<keyword>Stirling2</keyword>
+			<keyword>StruveH</keyword>
+			<keyword>StruveL</keyword>
+			<keyword>sturm</keyword>
+			<keyword>sturmseq</keyword>
+			<keyword>Subfields</keyword>
+			<keyword>subs</keyword>
+			<keyword>subsop</keyword>
+			<keyword>subtype</keyword>
+			<keyword>sum</keyword>
+			<keyword>Sum</keyword>
+			<keyword>surd</keyword>
+			<keyword>symmdiff</keyword>
+			<keyword>table</keyword>
+			<keyword>tablelook</keyword>
+			<keyword>tan</keyword>
+			<keyword>tanh</keyword>
+			<keyword>taylor</keyword>
+			<keyword>tcoeff</keyword>
+			<keyword>testeq</keyword>
+			<keyword>testfloat</keyword>
+			<keyword>thaw</keyword>
+			<keyword>ToInert</keyword>
+			<keyword>TopologicalSort</keyword>
+			<keyword>Trace</keyword>
+			<keyword>traperror</keyword>
+			<keyword>trigsubs</keyword>
+			<keyword>trunc</keyword>
+			<keyword>type</keyword>
+			<keyword>typematch</keyword>
+			<keyword>unames</keyword>
+			<keyword>unapply</keyword>
+			<keyword>unassign</keyword>
+			<keyword>undefine</keyword>
+			<keyword>Unordered</keyword>
+			<keyword>unprotect</keyword>
+			<keyword>unwindK</keyword>
+			<keyword>unwith</keyword>
+			<keyword>upperbound</keyword>
+			<keyword>value</keyword>
+			<keyword>Vandermonde</keyword>
+			<keyword>verify</keyword>
+			<keyword>WARNING</keyword>
+			<keyword>WeberE</keyword>
+			<keyword>WeierstrassP</keyword>
+			<keyword>WeierstrassPPrime</keyword>
+			<keyword>WeierstrassSigma</keyword>
+			<keyword>WeierstrassZeta</keyword>
+			<keyword>whattype</keyword>
+			<keyword>WhittakerM</keyword>
+			<keyword>WhittakerW</keyword>
+			<keyword>with</keyword>
+			<keyword>Wrightomega</keyword>
+			<keyword>zip</keyword>
+			<keyword>ztrans</keyword>
+			<keyword>animate</keyword>
+			<keyword>animate3d</keyword>
+			<keyword>animatecurve</keyword>
+			<keyword>arrow</keyword>
+			<keyword>changecoords</keyword>
+			<keyword>complexplot</keyword>
+			<keyword>complexplot3d</keyword>
+			<keyword>conformal</keyword>
+			<keyword>conformal3d</keyword>
+			<keyword>contourplot</keyword>
+			<keyword>contourplot3d</keyword>
+			<keyword>coordplot</keyword>
+			<keyword>coordplot3d</keyword>
+			<keyword>densityplot</keyword>
+			<keyword>display</keyword>
+			<keyword>dualaxisplot</keyword>
+			<keyword>fieldplot</keyword>
+			<keyword>fieldplot3d</keyword>
+			<keyword>gradplot</keyword>
+			<keyword>gradplot3d</keyword>
+			<keyword>implicitplot</keyword>
+			<keyword>implicitplot3d</keyword>
+			<keyword>inequal</keyword>
+			<keyword>interactive</keyword>
+			<keyword>interactiveparams</keyword>
+			<keyword>intersectplot</keyword>
+			<keyword>listcontplot</keyword>
+			<keyword>listcontplot3d</keyword>
+			<keyword>listdensityplot</keyword>
+			<keyword>listplot</keyword>
+			<keyword>listplot3d</keyword>
+			<keyword>loglogplot</keyword>
+			<keyword>logplot</keyword>
+			<keyword>matrixplot</keyword>
+			<keyword>multiple</keyword>
+			<keyword>odeplot</keyword>
+			<keyword>pareto</keyword>
+			<keyword>plotcompare</keyword>
+			<keyword>pointplot</keyword>
+			<keyword>pointplot3d</keyword>
+			<keyword>polarplot</keyword>
+			<keyword>polygonplot</keyword>
+			<keyword>polygonplot3d</keyword>
+			<keyword>polyhedra_supported</keyword>
+			<keyword>polyhedraplot</keyword>
+			<keyword>rootlocus</keyword>
+			<keyword>semilogplot</keyword>
+			<keyword>setcolors</keyword>
+			<keyword>setoptions</keyword>
+			<keyword>setoptions3d</keyword>
+			<keyword>spacecurve</keyword>
+			<keyword>sparsematrixplot</keyword>
+			<keyword>surfdata</keyword>
+			<keyword>textplot</keyword>
+			<keyword>textplot3d</keyword>
+			<keyword>tubeplot</keyword>
+			<keyword>frontend</keyword>
+			<keyword>algsubs</keyword>
 		</context>
 		
         <context id="block-comment" style-ref="comment" class="comment"
@@ -156,18 +847,10 @@
           <keyword>FAIL</keyword>
         </context>
         
-<!--        <context id="boolean-evaluations" style-ref="boolean-evaluations">
-			<keyword>and</keyword>
-			<keyword>or</keyword>
-			<keyword>not</keyword>
-			<keyword>&#61;</keyword>
-			<keyword>&lt;</keyword>
-			<keyword>&gt;</keyword>
-        </context>-->
-        
         <define-regex id="boolean-eval" extended="true">
 				(
 				[\=\!&lt;&gt;]	| #one of the normal operators
+				::				| #the type operator
 				\sand\s	|			#and
 				\sor\s				#or
 				)
@@ -176,7 +859,7 @@
 		  <match>\%{boolean-eval}</match>
 		</context>        
 		<context id="assignment-operator" style-ref="assignment-operator">
-		  <match>:=</match>
+		  <match>:\=</match>
 		</context>
 
 		<context id="reserved-classes" style-ref="reserved-classes">
@@ -211,6 +894,7 @@
 			<keyword>subset</keyword>
 			<keyword>uneval</keyword>
 			<keyword>unio</keyword>
+			<keyword>numeric</keyword>
 		</context>
 		
 		<context id="reserved-modules" style-ref="reserved-modules">
@@ -358,6 +1042,38 @@
 			<keyword>ModuleApply</keyword>
 		</context>
         
+		<context id="delayed-statement" style-ref="delayed-statement">
+		  <start>'</start>
+		  <end>'</end>
+		  <include>
+			<context ref="special-constants"/>
+            <context ref="boolean"/>
+            <context ref="line-comment"/>
+            <context ref="assignment-operator"/>
+            <context ref="reserved-classes" />
+            <context ref="reserved-modules" />
+            <context ref="type"/>
+            <context ref="include"/>
+			<context ref="def:escape"/>
+			<context ref="scope-declaration"/>
+			<context ref="string"/>
+			<context ref="control-start"/>
+			<context ref="control-middle"/>
+			<context ref="control-end"/>
+			<context ref="special-functions"/>
+			<context ref="close-comment-outside-comment"/>
+			<context ref="operator"/>
+			<context ref="boolean-evaluations"/>
+			<context ref="keyword"/>
+			<context ref="function" />
+		  </include>
+		</context>
+
+		<context id="backtick-name" style-ref="backtick-name" extend-parent="false">
+		  <start>`</start>
+		  <end>`</end>
+		</context>        
+        
         <context id="maple">
           <include>
 			<context ref="def:shebang"/> <!-- include the hashbang definition for maple shell scripts. -->
@@ -381,6 +1097,8 @@
 			<context ref="operator"/>
 			<context ref="boolean-evaluations"/>
 			<context ref="keyword"/>
+			<context ref="delayed-statement"/>
+			<context ref="function"/>
           </include>
         </context>
         
