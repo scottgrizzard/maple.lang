@@ -872,29 +872,36 @@
 		</context>
 		
 		<context id="type" style-ref="type">
-			<keyword>string</keyword>
-			<keyword>expseq</keyword>
-			<keyword>float</keyword>
-			<keyword>fraction</keyword>
-			<keyword>function</keyword>
-			<keyword>integer</keyword>
-			<keyword>list</keyword>
-			<keyword>symbol</keyword>
-			<keyword>posint</keyword>
-			<keyword>boolean</keyword>
+			<keyword>algebraic</keyword>
 			<keyword>arithmetic</keyword>
+			<keyword>boolean</keyword>
 			<keyword>complex</keyword>
 			<keyword>constant</keyword>
 			<keyword>diffop</keyword>
 			<keyword>ditto</keyword>
-			<keyword>emptysymbol</keyword>
+            <keyword>emptysymbol</keyword>
+			<keyword>expseq</keyword>
+			<keyword>extended_numeric</keyword>
+			<keyword>float</keyword>
+			<keyword>fraction</keyword>
+			<keyword>function</keyword>
 			<keyword>implies</keyword>
+			<keyword>indexed</keyword>
+			<keyword>integer</keyword>
+			<keyword>list</keyword>
 			<keyword>minus</keyword>
+			<keyword>negint</keyword>
+			<keyword>nonnegint</keyword>
+			<keyword>nonposint</keyword>			
+			<keyword>numeric</keyword>
+			<keyword>posint</keyword>
+			<keyword>string</keyword>
+			<keyword>symbol</keyword>
+			<keyword>series</keyword>
 			<keyword>set</keyword>
 			<keyword>subset</keyword>
 			<keyword>uneval</keyword>
 			<keyword>unio</keyword>
-			<keyword>numeric</keyword>
 		</context>
 		
 		<context id="reserved-modules" style-ref="reserved-modules">
@@ -1072,6 +1079,15 @@
 		<context id="backtick-name" style-ref="backtick-name" extend-parent="false">
 		  <start>`</start>
 		  <end>`</end>
+		</context>
+		
+		<context id="numeric" style-ref="number">
+		  <match extended="true">
+			(\b([0-9]+|0[xX][0-9a-fA-F]+)[Ll]?\b|
+			 \b(([0-9]+[Ee][-]?[0-9]+|
+				([0-9]*\.[0-9]+|[0-9]+\.)([Ee][-]?[0-9]+)?)[fFdD]?|
+				[0-9]+[FfDd]))
+		  </match>
 		</context>        
         
         <context id="maple">
@@ -1099,6 +1115,7 @@
 			<context ref="keyword"/>
 			<context ref="delayed-statement"/>
 			<context ref="function"/>
+			<context ref="numeric" />
           </include>
         </context>
         

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-maple">
+  <glob pattern="*.mpl"/>
+  <sub-class-of type="text/plain"/>
+  <comment>Maple Code</comment>
+</mime-type>
